@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
             }
 
             if (value <= 0) {
-                // died
+                GameManager.Instance.RestartLevel();
             }
 
             _lives = value;
@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -5)
+        {
+            lives = 0;
+        }
     }
 }

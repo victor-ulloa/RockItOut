@@ -21,6 +21,7 @@ public class SwipeDetection : MonoBehaviour
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     private void FixedUpdate()

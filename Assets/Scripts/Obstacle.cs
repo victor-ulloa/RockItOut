@@ -18,11 +18,8 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Player hit
-
         if (other.tag == "Player")
         {
-            Debug.Log("HIT PLAYER");
             PlayerController player = other.GetComponent<PlayerController>();
             player.lives--;
         }
