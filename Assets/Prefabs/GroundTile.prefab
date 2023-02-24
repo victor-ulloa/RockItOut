@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4203857600273042732}
   m_Layer: 0
   m_Name: ObstacleSpawnRight
-  m_TagString: Untagged
+  m_TagString: ObstacleSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &3312863619033233352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3657938623699668769}
+  m_Layer: 0
+  m_Name: PickupSpawnMiddle
+  m_TagString: PickupSpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3657938623699668769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312863619033233352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5928072681507539885}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4891188514526310917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850923816571700345}
+  m_Layer: 0
+  m_Name: PickupSpawnLeft
+  m_TagString: PickupSpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &850923816571700345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891188514526310917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5928072681507539885}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5039429523225443531
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +202,7 @@ GameObject:
   - component: {fileID: 4915711383758649186}
   m_Layer: 0
   m_Name: ObstacleSpawnLeft
-  m_TagString: Untagged
+  m_TagString: ObstacleSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +233,7 @@ GameObject:
   - component: {fileID: 5761337630700222487}
   m_Layer: 0
   m_Name: ObstacleSpawnMiddle
-  m_TagString: Untagged
+  m_TagString: ObstacleSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +252,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5928072681507539885}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6010872116286366149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8016231153853735106}
+  m_Layer: 0
+  m_Name: PickupSpawnRight
+  m_TagString: PickupSpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8016231153853735106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010872116286366149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5928072681507539885}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6745402493374831826
 GameObject:
@@ -257,6 +350,9 @@ Transform:
   - {fileID: 4915711383758649186}
   - {fileID: 5761337630700222487}
   - {fileID: 4203857600273042732}
+  - {fileID: 850923816571700345}
+  - {fileID: 3657938623699668769}
+  - {fileID: 8016231153853735106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -285,4 +381,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5aec4c087aca004eac1815031dc528b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleSpawnPoints:
+  - {fileID: 4915711383758649186}
+  - {fileID: 5761337630700222487}
+  - {fileID: 4203857600273042732}
   obstaclePrefab: {fileID: 4683916892036203477, guid: 558b0db2f0dc85944aa25cda44a17e1b, type: 3}
+  pickupSpawnPoints:
+  - {fileID: 850923816571700345}
+  - {fileID: 3657938623699668769}
+  - {fileID: 8016231153853735106}
+  pickupPrefabs:
+  - {fileID: 3593267313203683072, guid: 39c66b0a7bc57fa4da24cf22927e648b, type: 3}
