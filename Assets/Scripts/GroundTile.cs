@@ -13,8 +13,6 @@ public class GroundTile : MonoBehaviour
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
-        SpawnObstacle();
-        SpawnPickup();
     }
 
     private void OnTriggerExit(Collider other)
@@ -23,13 +21,13 @@ public class GroundTile : MonoBehaviour
         Destroy(gameObject, 2);
     }
 
-    void SpawnObstacle()
+    public void SpawnObstacle()
     {
         Transform spawnPoint = obstacleSpawnPoints[Random.Range(0, obstacleSpawnPoints.Length)];
         Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
     }
 
-    void SpawnPickup()
+    public void SpawnPickup()
     {
         GameObject pickupToSpawn = pickupPrefabs[Random.Range(0, pickupPrefabs.Length)];
         Transform spawnPoint = pickupSpawnPoints[Random.Range(0, obstacleSpawnPoints.Length)];

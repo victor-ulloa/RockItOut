@@ -10,6 +10,7 @@ public class GroundSpawner : MonoBehaviour
     
     void Start()
     {
+        SpawnTile(false, false);
         for (int i = 0; i < 10; i++)
         {
             SpawnTile();
@@ -17,9 +18,18 @@ public class GroundSpawner : MonoBehaviour
         
     }
 
-    public void SpawnTile()
+    public void SpawnTile(bool shouldSpawnPickup = true, bool shouldSpawnObstacle = true)
     {
         GameObject tempTile = Instantiate(groundTile, nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = tempTile.transform.GetChild(1).transform.position;
+        GroundTile tempGroundTile = tempTile.GetComponent<GroundTile>();
+
+        if (shouldSpawnPickup) {
+            tempGroundTile.SpawnPickup();
+        }
+        if (shouldSpawnObstacle) {
+            tempGroundTile.SpawnObstacle();
+        }
+        
     }
 }
