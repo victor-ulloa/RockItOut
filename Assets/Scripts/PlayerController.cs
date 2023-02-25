@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     Rigidbody rb;
+    Animator animator;
 
     private int _lives = 3;
     public int lives
@@ -44,12 +45,14 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove);
+        
     }
 
     private void Update()
@@ -59,7 +62,8 @@ public class PlayerController : MonoBehaviour
             lives = 0;
         }
         
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, (GetComponent<Collider>().bounds.size.y / 2) + 0.1f, groundMask);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     public void MoveLeft()
