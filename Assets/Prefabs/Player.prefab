@@ -843,6 +843,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 5
+  speed: 10
+  horizontalSpeed: 125
+  jumpForce: 100
+  isGrounded: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &1966779052777884159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,8 +865,6 @@ MonoBehaviour:
   minimumDistance: 0.05
   maximumTime: 0.8
   dirThreshold: 0.9
-  speed: 5
-  horizontalSpeed: 125
 --- !u!1 &4001770801039862868
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] int maxLives = 5;
 
-    [SerializeField] float speed = 10;
-    [SerializeField] float horizontalSpeed = 125;
+    [SerializeField] float speed = 10f;
+    [SerializeField] float horizontalSpeed = 125f;
+    [SerializeField] float jumpForce = 100f;
+    [SerializeField] bool isGrounded;
+
+    [SerializeField] LayerMask groundMask;
 
     Rigidbody rb;
 
@@ -54,6 +58,8 @@ public class PlayerController : MonoBehaviour
         {
             lives = 0;
         }
+        
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, (GetComponent<Collider>().bounds.size.y / 2) + 0.1f, groundMask);
     }
 
     public void MoveLeft()
@@ -68,6 +74,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-
+        if (isGrounded) {
+            rb.AddForce(Vector3.up * jumpForce);
+        }
     }
 }
