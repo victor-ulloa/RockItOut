@@ -10,10 +10,9 @@ public class GroundSpawner : MonoBehaviour
     
     void Start()
     {
-        SpawnTile(false, false);
         for (int i = 0; i < 10; i++)
         {
-            SpawnTile();
+            SpawnTile(false, i>3);
         }
         
     }

@@ -7,6 +7,7 @@ public class SwipeDetection : MonoBehaviour
 
     [Range(0, 1)][SerializeField] float dirThreshold = .9f;
 
+    PlayerController player;
 
     private Vector2 startPosition;
     private float startTime;
@@ -14,24 +15,9 @@ public class SwipeDetection : MonoBehaviour
     private Vector2 endPosition;
     private float endTime;
 
-    [SerializeField] float speed = 5;
-    [SerializeField] float horizontalSpeed = 100;
-
-    Rigidbody rb;
-
-    private void Awake() {
-        rb = GetComponent<Rigidbody>();
-        
-    }
-
-    private void FixedUpdate()
+    private void Awake()
     {
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + forwardMove);
-    }
-
-    private void Update() {
-        
+        player = GetComponent<PlayerController>();
     }
 
     private void OnEnable()
@@ -75,21 +61,19 @@ public class SwipeDetection : MonoBehaviour
 
         if (Vector2.Dot(Vector2.up, directionNormalized) >= dirThreshold)
         {
-            Debug.Log("UP");
+            player.Jump();
         }
-        if (Vector2.Dot(Vector2.down, directionNormalized) >= dirThreshold)
-        {
-            Debug.Log("DOWN");
-        }
+        // if (Vector2.Dot(Vector2.down, directionNormalized) >= dirThreshold)
+        // {
+        //     Debug.Log("DOWN");
+        // }
         if (Vector2.Dot(Vector2.left, directionNormalized) >= dirThreshold)
         {
-            rb.MovePosition(rb.position - (transform.right * horizontalSpeed * Time.fixedDeltaTime));
-            Debug.Log("LEFT");
+            player.MoveLeft();
         }
         if (Vector2.Dot(Vector2.right, directionNormalized) >= dirThreshold)
         {
-            rb.MovePosition(rb.position + (transform.right * horizontalSpeed * Time.fixedDeltaTime));
-            Debug.Log("RIGHT");
+            player.MoveRight();
         }
     }
 }
