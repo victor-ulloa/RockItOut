@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool isGrounded;
 
     [SerializeField] LayerMask groundMask;
+
+    [HideInInspector] public UnityEvent<int> OnLifeValueChaged;
 
     Rigidbody rb;
     Animator animator;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             {
                 _lives = maxLives;
             }
+            OnLifeValueChaged.Invoke(_lives);
             Debug.Log("Lives are set to:" + lives.ToString());
         }
     }
