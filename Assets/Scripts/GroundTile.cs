@@ -5,7 +5,7 @@ public class GroundTile : MonoBehaviour
     GroundSpawner groundSpawner;
     
     [SerializeField] Transform[] obstacleSpawnPoints;
-    [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] GameObject[] obstaclePrefabs;
     [SerializeField] Transform[] pickupSpawnPoints;
     [SerializeField] GameObject[] pickupPrefabs;
 
@@ -23,8 +23,9 @@ public class GroundTile : MonoBehaviour
 
     public void SpawnObstacle()
     {
+        GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
         Transform spawnPoint = obstacleSpawnPoints[Random.Range(0, obstacleSpawnPoints.Length)];
-        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity, transform);
     }
 
     public void SpawnPickup()

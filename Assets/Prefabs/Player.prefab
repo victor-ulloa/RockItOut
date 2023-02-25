@@ -845,7 +845,7 @@ MonoBehaviour:
   maxLives: 5
   speed: 10
   horizontalSpeed: 125
-  jumpForce: 100
+  jumpForce: 600
   isGrounded: 0
   groundMask:
     serializedVersion: 2

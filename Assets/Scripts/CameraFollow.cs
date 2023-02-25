@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         offset = transform.position = player.position;
-        offset.y += 3;
+        offset.y += 5;
         offset.z -= 10;
     }
 
