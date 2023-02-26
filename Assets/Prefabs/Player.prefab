@@ -844,12 +844,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 5
   speed: 10
+  speedMultiplier: 0.01
   horizontalSpeed: 125
   jumpForce: 600
-  isGrounded: 0
+  isGrounded: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  OnLifeValueChaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1966779052777884159
 MonoBehaviour:
   m_ObjectHideFlags: 0
