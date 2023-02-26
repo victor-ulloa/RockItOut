@@ -16,8 +16,13 @@ public class GameManager : Singelton<GameManager>
         {
             _score = value;
             OnScoreValueChanged.Invoke(_score);
-            Debug.Log("Your score is:" + score.ToString());
+            // Debug.Log("Your score is: " + score.ToString());
         }
+    }
+
+    private void FixedUpdate()
+    {
+        score++;
     }
 
     public void RestartLevel()

@@ -10,21 +10,25 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (livesValue) {
+        if (livesValue)
+        {
             livesValue.text = GameManager.Instance.player.lives.ToString();
             GameManager.Instance.player.OnLifeValueChaged.AddListener((value) => UpdateLives(value));
         }
-        if (scoreValue) {
+        if (scoreValue)
+        {
             scoreValue.text = GameManager.Instance.score.ToString();
             GameManager.Instance.OnScoreValueChanged.AddListener((value) => UpdateScore(value));
         }
     }
 
-    void UpdateLives(int value) {
+    void UpdateLives(int value)
+    {
         livesValue.text = value.ToString();
     }
 
-    void UpdateScore(int value) {
+    void UpdateScore(int value)
+    {
         scoreValue.text = value.ToString();
     }
 }

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int maxLives = 5;
 
     [SerializeField] float speed = 10f;
+    [SerializeField] float speedMultiplier = 0.1f;
     [SerializeField] float horizontalSpeed = 125f;
     [SerializeField] float jumpForce = 100f;
     [SerializeField] bool isGrounded;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 _lives = maxLives;
             }
             OnLifeValueChaged.Invoke(_lives);
-            Debug.Log("Lives are set to:" + lives.ToString());
+            // Debug.Log("Lives are set to: " + lives.ToString());
         }
     }
 
@@ -52,9 +53,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + forwardMove);
+        // Debug.Log((int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10)-1));
         
+        Vector3 forwardMove = transform.forward * (speed + (int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10)-1)) * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + forwardMove);
+
     }
 
     private void Update()
@@ -63,7 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             lives = 0;
         }
-        
+
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
         animator.SetBool("isGrounded", isGrounded);
     }
@@ -80,7 +83,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (isGrounded) {
+        if (isGrounded)
+        {
             rb.AddForce(Vector3.up * jumpForce);
         }
     }
