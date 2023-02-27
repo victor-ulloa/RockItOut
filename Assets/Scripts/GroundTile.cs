@@ -3,7 +3,7 @@ using UnityEngine;
 public class GroundTile : MonoBehaviour
 {
     GroundSpawner groundSpawner;
-    
+
     [SerializeField] Transform[] obstacleSpawnPoints;
     [SerializeField] GameObject[] obstaclePrefabs;
     [SerializeField] Transform[] pickupSpawnPoints;
@@ -17,8 +17,12 @@ public class GroundTile : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        groundSpawner.SpawnTile();
-        Destroy(gameObject, 2);
+        if (other.tag == "Player")
+        {
+            groundSpawner.SpawnTile();
+            Destroy(gameObject, 2);
+        }
+
     }
 
     public void SpawnObstacle()

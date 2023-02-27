@@ -13,14 +13,7 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate() {
-        // Vector3 location = player.transform.TransformPoint(Vector3.zero) * speed * Time.fixedDeltaTime;
-        // Debug.Log(player.transform.TransformPoint(Vector3.zero));
-        // rb.MovePosition(rb.position + location);
-    }
-
     private void Update() {
-        Debug.Log(player.transform.position);
         transform.LookAt(player.transform);
         rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Force);
     }
@@ -28,5 +21,14 @@ public class Projectile : MonoBehaviour
     public void SetTarget(GameObject player)
     {
         this.player = player;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            player.lives--;
+        }
     }
 }
