@@ -16,7 +16,6 @@ public class GameManager : Singelton<GameManager>
         {
             _score = value;
             OnScoreValueChanged.Invoke(_score);
-            // Debug.Log("Your score is: " + score.ToString());
         }
     }
 

@@ -7,7 +7,6 @@ public class HUDManager : MonoBehaviour
     [SerializeField] TMP_Text livesValue;
     [SerializeField] TMP_Text scoreValue;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (livesValue)

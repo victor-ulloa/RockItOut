@@ -20,17 +20,4 @@ public abstract class Singelton<T> : MonoBehaviour where T : Component
             return instance;                    
         }
     }
-
-    // protected virtual void Awake()
-    // {
-    //     if (!instance)
-    //     {
-    //         instance = this as T;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 }

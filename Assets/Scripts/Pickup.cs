@@ -10,14 +10,7 @@ public class Pickup : MonoBehaviour
 
     [SerializeReference] PickupType pickupType;
     [SerializeField] float turnSpeed = 90f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         transform.Rotate(0, turnSpeed * Time.deltaTime, 0);

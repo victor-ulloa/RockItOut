@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// [DefaultExecutionOrder(-1)]
 public class InputManager : Singelton<InputManager>
 {
 
@@ -20,7 +19,6 @@ public class InputManager : Singelton<InputManager>
         input = new PlayerControls();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         input.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
@@ -56,7 +54,7 @@ public class InputManager : Singelton<InputManager>
         {
             if (raycastHit.collider.CompareTag("Projectile"))
             {
-                
+                GameManager.Instance.score += 100;
                 Destroy(raycastHit.collider.gameObject);
             }
         }

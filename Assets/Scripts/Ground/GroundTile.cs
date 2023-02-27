@@ -9,7 +9,6 @@ public class GroundTile : MonoBehaviour
     [SerializeField] Transform[] pickupSpawnPoints;
     [SerializeField] GameObject[] pickupPrefabs;
 
-    // Start is called before the first frame update
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
@@ -22,7 +21,10 @@ public class GroundTile : MonoBehaviour
             groundSpawner.SpawnTile();
             Destroy(gameObject, 2);
         }
-
+        if (other.tag == "Projectile")
+        {
+            Destroy(other.transform.gameObject, 1);
+        }
     }
 
     public void SpawnObstacle()

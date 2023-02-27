@@ -53,8 +53,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Debug.Log((int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10)-1));
-        
         Vector3 forwardMove = transform.forward * (speed + (int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10)-1)) * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove);
 

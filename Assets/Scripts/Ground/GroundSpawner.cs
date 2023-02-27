@@ -14,7 +14,6 @@ public class GroundSpawner : MonoBehaviour
         {
             SpawnTile(false, i>3);
         }
-        
     }
 
     public void SpawnTile(bool shouldSpawnPickup = true, bool shouldSpawnObstacle = true)
