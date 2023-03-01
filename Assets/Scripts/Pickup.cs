@@ -10,6 +10,9 @@ public class Pickup : MonoBehaviour
 
     [SerializeReference] PickupType pickupType;
     [SerializeField] float turnSpeed = 90f;
+
+    [HideInInspector] public AudioSourceManager sfxManager;
+    [SerializeReference] AudioClip pickupSfx;
     
     void Update()
     {
@@ -26,7 +29,7 @@ public class Pickup : MonoBehaviour
                 GameManager.Instance.score += 100;
                 break;
         }
-
+    sfxManager.Play(pickupSfx);
         Destroy(gameObject);
     }
 }

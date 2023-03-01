@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public UnityEvent<int> OnLifeValueChaged;
 
+    [HideInInspector] public AudioSourceManager sfxManager;
+    [SerializeReference] AudioClip jumpSfx;
+    [SerializeReference] AudioClip damageSfx;
+
     Rigidbody rb;
     Animator animator;
 
@@ -28,6 +32,7 @@ public class PlayerController : MonoBehaviour
             if (_lives > value)
             {
                 // lost 1 live
+                sfxManager.Play(damageSfx);
             }
 
             if (value <= 0)
@@ -49,11 +54,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        sfxManager = GetComponent<AudioSourceManager>();
     }
 
     private void FixedUpdate()
     {
-        Vector3 forwardMove = transform.forward * (speed + (int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10)-1)) * Time.fixedDeltaTime;
+        Vector3 forwardMove = transform.forward * (speed + (int)(Mathf.Ceil((speedMultiplier * GameManager.Instance.score) / 10) - 1)) * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove);
 
     }
@@ -71,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveLeft()
     {
+        //add force
         rb.MovePosition(rb.position - (transform.right * horizontalSpeed * Time.fixedDeltaTime));
     }
 
@@ -84,6 +91,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce);
+            sfxManager.Play(jumpSfx);
         }
     }
 }

@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
 
     private void Update() {
         transform.LookAt(player.transform);
-        rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Force);
+        rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
     }
 
     public void SetTarget(GameObject player)
