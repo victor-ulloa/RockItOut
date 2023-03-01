@@ -29,7 +29,7 @@ public class Pickup : MonoBehaviour
                 GameManager.Instance.score += 100;
                 break;
         }
-    sfxManager.Play(pickupSfx);
+        sfxManager.Play(pickupSfx);
         Destroy(gameObject);
     }
 }

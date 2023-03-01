@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3661b993b9e0bc345a3d1923fb832cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxGroup: {fileID: 0}
-  musicGroup: {fileID: 0}
+  sfxGroup: {fileID: -1722211538119397650, guid: aaeef662156c1b94cbddd9cfd1ae7104, type: 2}
+  musicGroup: {fileID: 5188262509027894443, guid: aaeef662156c1b94cbddd9cfd1ae7104, type: 2}
 --- !u!1 &5736381138439355000
 GameObject:
   m_ObjectHideFlags: 0
